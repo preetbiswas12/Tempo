@@ -1,15 +1,14 @@
 <p align="center">
-  <img src="resources/logo.png" alt="Open Cowork Logo" width="280" />
+  <!-- <img src="resources/logo.png" alt="Tempo Logo" width="280" /> -->
 </p>
 
-<h1 align="center">🚀 Open Cowork: Your Personal AI Agent Desktop App</h1>
+<h1 align="center">🚀 Tempo: Your Personal AI Agent Desktop App</h1>
 
 <p align="center">
   • Open Source Claude Cowork • One-Click Install 
 </p>
 
 <p align="center">
-  <a href="./README_zh.md">中文文档</a> •
   <a href="#features">Features</a> •
   <a href="#demo">Demo</a> •
   <a href="#installation">Downloads</a> •
@@ -17,28 +16,27 @@
   <a href="#skills">Skills Library</a>
 </p>
 
-<p align="center">
+<!-- <p align="center">
   <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20macOS-blue" alt="Platform" />
   <img src="https://img.shields.io/badge/License-MIT-green" alt="License" />
   <img src="https://img.shields.io/badge/Node.js-18+-brightgreen" alt="Node.js" />
   <a href="https://discord.gg/pynjtQDf"><img src="https://img.shields.io/discord/1493588403260883078?logo=discord&label=Discord&color=5865F2" alt="Discord" /></a>
-  <a href="#community"><img src="https://img.shields.io/badge/WeChat-微信群-07C160?logo=wechat&logoColor=white" alt="WeChat" /></a>
-</p>
+</p> -->
 
 ---
 
-Open Cowork is a free, open-source AI agent desktop application for Windows and macOS. It wraps Claude Code, OpenAI, Gemini, DeepSeek, and other AI models into a user-friendly GUI with one-click installation — no coding required. Key capabilities include VM-level sandbox isolation (WSL2 on Windows, Lima on macOS), a built-in Skills system for generating PPTX, DOCX, XLSX, and PDF documents, MCP (Model Context Protocol) integration for connecting to browsers, Notion, and other desktop apps, GUI automation via computer use, and remote control through Feishu (Lark) and Slack. Open Cowork is the open-source implementation of Claude Cowork, designed to make AI-powered desktop automation accessible to everyone.
+Tempo is a free, open-source AI agent desktop application for Windows and macOS. It wraps Claude Code, OpenAI, Gemini, DeepSeek, and other AI models into a user-friendly GUI with one-click installation — no coding required. Key capabilities include VM-level sandbox isolation (WSL2 on Windows, Lima on macOS), a built-in Skills system for generating PPTX, DOCX, XLSX, and PDF documents, MCP (Model Context Protocol) integration for connecting to browsers, Notion, and other desktop apps, GUI automation via computer use, and remote control through Feishu (Lark) and Slack. Tempo is the open-source implementation of Claude Cowork, designed to make AI-powered desktop automation accessible to everyone.
 
 ---
 
 ## 📖 Introduction
 
-**Open Cowork** is an open-source implementation of **Claude Cowork**, with one-click installers for **Windows** and **macOS**—no coding required.
+**Tempo** is an open-source implementation of **Claude Cowork**, with one-click installers for **Windows** and **macOS**—no coding required.
 
 It provides a sandboxed workspace where AI can manage files, generate professional outputs (PPTX, DOCX, XLSX, etc.) through our built-in **Skills** system, and **connect to desktop apps via MCP** (browser, Notion, etc.) for better collaboration.
 
 > [!WARNING]
-> **Disclaimer**: Open Cowork is an AI collaboration tool. Please exercise caution with its operations, especially when authorizing file modifications or deletions. We support VM-based sandbox isolation, but some operations may still carry risks.
+> **Disclaimer**: Tempo is an AI collaboration tool. Please exercise caution with its operations, especially when authorizing file modifications or deletions. We support VM-based sandbox isolation, but some operations may still carry risks.
 
 ---
 
@@ -67,9 +65,9 @@ It provides a sandboxed workspace where AI can manage files, generate profession
 
 <a id="demo"></a>
 
-## 🎬 Demo
+<!-- ## 🎬 Demo
 
-See Open Cowork in action:
+See Tempo in action:
 
 ### 1. Folder Organization & Cleanup 📂
 
@@ -91,7 +89,7 @@ https://github.com/user-attachments/assets/75542c76-210f-414d-8182-1da988c148f2
 
 https://github.com/user-attachments/assets/05a703de-c0f5-407b-9a43-18b6a172fd74
 
----
+--- -->
 
 <a id="installation"></a>
 
@@ -120,8 +118,8 @@ Get the latest version from our [Releases Page](https://github.com/OpenCoworkAI/
 For developers who want to contribute or modify the codebase:
 
 ```bash
-git clone https://github.com/OpenCoworkAI/open-cowork.git
-cd open-cowork
+git clone https://github.com/preetbiswas12/tempo.git
+cd tempo
 npm install
 npm run rebuild
 npm run dev
@@ -131,7 +129,7 @@ To build the installer locally: `npm run build`
 
 ### Security Configuration: 🔒 Sandbox Support
 
-Open Cowork provides **multi-level sandbox protection** to keep your system safe:
+Tempo provides **multi-level sandbox protection** to keep your system safe:
 
 | Level        | Platform | Technology | Description                                    |
 | ------------ | -------- | ---------- | ---------------------------------------------- |
@@ -152,7 +150,7 @@ Open Cowork provides **multi-level sandbox protection** to keep your system safe
 
 ```bash
 brew install lima
-# Open Cowork will automatically create and manage a Lima VM (internal Lima name: 'claude-sandbox')
+# Tempo will automatically create and manage a Lima VM (internal Lima name: 'claude-sandbox')
 ```
 
 ---
@@ -169,7 +167,6 @@ You need an API key to power the agent. We support **OpenRouter**, **Anthropic**
 | ------------------ | -------------------------------------------------------------------------- | ---------------------------------------- | -------------------- |
 | **OpenRouter**     | [OpenRouter](https://openrouter.ai/)                                       | `https://openrouter.ai/api`              | `claude-4-5-sonnet`  |
 | **Anthropic**      | [Anthropic Console](https://console.anthropic.com/)                        | (Default)                                | `claude-4-5-sonnet`  |
-| **Zhipu AI (GLM)** | [GLM Coding Plan](https://bigmodel.cn/glm-coding) (⚡️Chinese Deal)         | `https://open.bigmodel.cn/api/anthropic` | `glm-4.7`, `glm-4.6` |
 | **MiniMax**        | [MiniMax Coding Plan](https://platform.minimaxi.com/subscribe/coding-plan) | `https://api.minimaxi.com/anthropic`     | `minimax-m2`         |
 | **Kimi**           | [Kimi Coding Plan](https://www.kimi.com/membership/pricing)                | `https://api.kimi.com/coding/`           | `kimi-k2`            |
 
@@ -201,7 +198,7 @@ You need an API key to power the agent. We support **OpenRouter**, **Anthropic**
 
 ## 🧰 Skills Library
 
-Open Cowork ships with built-in skills under `.claude/skills/`, and supports user-added or custom skills, including:
+Tempo ships with built-in skills under `.claude/skills/`, and supports user-added or custom skills, including:
 
 - `pptx` for PowerPoint generation
 - `docx` for Word document processing
@@ -286,35 +283,35 @@ See our full **[ROADMAP.md](ROADMAP.md)** for detailed plans.
 
 ## ❓ FAQ
 
-**What is Open Cowork?**
-Open Cowork is a free, open-source desktop application that provides a local AI agent workspace. It wraps AI models (Claude, GPT, Gemini, DeepSeek, etc.) into a GUI with one-click installers for Windows and macOS — no terminal or coding knowledge required.
+**What is Tempo?**
+Tempo is a free, open-source desktop application that provides a local AI agent workspace. It wraps AI models (Claude, GPT, Gemini, DeepSeek, etc.) into a GUI with one-click installers for Windows and macOS — no terminal or coding knowledge required.
 
-**How is Open Cowork different from Claude Cowork?**
-Open Cowork is the open-source implementation of Claude Cowork. It adds multi-model support (not just Claude), GUI automation via computer use, remote control through Feishu/Slack, and VM-level sandbox isolation. See the [feature comparison table](#features) for details.
+**How is Tempo different from Claude Cowork?**
+Tempo is the open-source implementation of Claude Cowork. It adds multi-model support (not just Claude), GUI automation via computer use, remote control through Feishu/Slack, and VM-level sandbox isolation. See the [feature comparison table](#features) for details.
 
-**What AI models does Open Cowork support?**
+**What AI models does Tempo support?**
 Claude (via Anthropic or OpenRouter), OpenAI-compatible APIs, and Chinese models including GLM (Zhipu AI), MiniMax, and Kimi. Any provider offering an OpenAI-compatible API endpoint can be configured.
 
-**Is Open Cowork free?**
-Yes. Open Cowork itself is completely free and open-source under the MIT license. You only need to pay for the AI model API usage from your chosen provider.
+**Is Tempo free?**
+Yes. Tempo itself is completely free and open-source under the MIT license. You only need to pay for the AI model API usage from your chosen provider.
 
-**Does Open Cowork work on Linux?**
-Currently, Open Cowork provides pre-built installers for Windows and macOS only. Linux users can build from source — see the [Build from Source](#installation) section.
+**Does Tempo work on Linux?**
+Currently, Tempo provides pre-built installers for Windows and macOS only. Linux users can build from source — see the [Build from Source](#installation) section.
 
 **How does sandbox isolation work?**
-Open Cowork offers multi-level protection: basic path-based restrictions on all platforms, and enhanced VM-level isolation using WSL2 (Windows) or Lima (macOS). When a VM is available, all commands execute inside an isolated Linux environment, protecting your host system.
+Tempo offers multi-level protection: basic path-based restrictions on all platforms, and enhanced VM-level isolation using WSL2 (Windows) or Lima (macOS). When a VM is available, all commands execute inside an isolated Linux environment, protecting your host system.
 
 **What are Skills and how do I create custom ones?**
-Skills are built-in workflows for specific tasks like generating PPTX, DOCX, PDF, or XLSX files. Open Cowork ships with default skills under `.claude/skills/` and includes a `skill-creator` tool to help you build your own custom skills.
+Skills are built-in workflows for specific tasks like generating PPTX, DOCX, PDF, or XLSX files. Tempo ships with default skills under `.claude/skills/` and includes a `skill-creator` tool to help you build your own custom skills.
 
 **What is MCP and how does it work?**
-MCP (Model Context Protocol) lets AI connect to external tools and services. Open Cowork supports MCP connectors for browsers, Notion, and other desktop apps — extending the AI's capabilities beyond just file management and code.
+MCP (Model Context Protocol) lets AI connect to external tools and services. Tempo supports MCP connectors for browsers, Notion, and other desktop apps — extending the AI's capabilities beyond just file management and code.
 
 **How do I set up remote control via Feishu or Slack?**
-Open Cowork supports remote control through Feishu (Lark) and Slack integration, allowing you to send commands and receive results from collaboration platforms. Check the app settings for remote control configuration.
+Tempo supports remote control through Feishu (Lark) and Slack integration, allowing you to send commands and receive results from collaboration platforms. Check the app settings for remote control configuration.
 
-**Is my data safe? Does Open Cowork send data to external servers?**
-Open Cowork runs locally on your machine. Your files stay in your workspace. The only external communication is with the AI model API you configure (e.g., Anthropic, OpenRouter). No data is sent to Open Cowork servers.
+**Is my data safe? Does Tempo send data to external servers?**
+Tempo runs locally on your machine. Your files stay in your workspace. The only external communication is with the AI model API you configure (e.g., Anthropic, OpenRouter). No data is sent to Tempo servers.
 
 ---
 
@@ -328,25 +325,12 @@ We welcome contributions! Whether it's a new Skill, a UI fix, or a security impr
 
 ---
 
-## 💬 Community
-
-Join our community for support and discussion:
-
-- **Discord**: [Join our Discord server](https://discord.gg/pynjtQDf) — for real-time chat, support, and development discussion.
-- **WeChat**: Scan the QR code below to join our WeChat group (Chinese community).
-
-<p align="center">
-  <img src="resources/WeChat.jpg" alt="WeChat Group" width="200" />
-</p>
-
----
-
 ## 📄 License
 
-MIT © Open Cowork Team
+MIT © Tempo Team
 
 ---
 
 <p align="center">
-  Made with ❤️ by the Open Cowork Team with the help of opus4.5
+  Made with ❤️ by the Tempo Team with the help of opus4.5
 </p>
