@@ -1,0 +1,75 @@
+import Store from 'electron-store';
+import { app } from 'electron';
+import os from 'node:os';
+import path from 'node:path';
+import type { InstalledPlugin } from '../../renderer/types';
+
+interface PluginRegistrySchema {
+  plugins: InstalledPlugin[];
+}
+
+class PluginRegistryStore {
+  private readonly store: Store<PluginRegistrySchema>;
+
+  constructor() {
+    const storeCwd = this.resolveStoreCwd();
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any -- electron-store requires Record<string, any>
+    const storeOptions: any = {
+      name: 'plugin-registry',
+      projectName: 'open-cowork',
+      cwd: storeCwd,
+      defaults: {
+        plugins: [],
+      },
+    };
+
+    // Provide a fallback project name in non-Electron processes to avoid conf initialization failure.
+    this.store = new Store<PluginRegistrySchema>(storeOptions);
+  }
+
+  private resolveStoreCwd(): string {
+    try {
+      if (typeof app?.getPath === 'function') {
+        return app.getPath('userData');
+      }
+    } catch {
+      // Fall back to a temp directory for test or non-Electron scenarios.
+    }
+    return path.join(os.tmpdir(), 'open-cowork');
+  }
+
+  list(): InstalledPlugin[] {
+    return this.store
+      .get('plugins', [])
+      .slice()
+      .sort((a, b) => a.name.localeCompare(b.name));
+  }
+
+  get(pluginId: string): InstalledPlugin | undefined {
+    return this.store.get('plugins', []).find((plugin) => plugin.pluginId === pluginId);
+  }
+
+  save(plugin: InstalledPlugin): InstalledPlugin {
+    const plugins = this.store.get('plugins', []);
+    const index = plugins.findIndex((item) => item.pluginId === plugin.pluginId);
+    if (index >= 0) {
+      plugins[index] = plugin;
+    } else {
+      plugins.push(plugin);
+    }
+    this.store.set('plugins', plugins);
+    return plugin;
+  }
+
+  delete(pluginId: string): boolean {
+    const plugins = this.store.get('plugins', []);
+    const filtered = plugins.filter((item) => item.pluginId !== pluginId);
+    if (filtered.length === plugins.length) {
+      return false;
+    }
+    this.store.set('plugins', filtered);
+    return true;
+  }
+}
+
+export const pluginRegistryStore = new PluginRegistryStore();

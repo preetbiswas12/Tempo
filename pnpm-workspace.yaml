@@ -1,0 +1,9 @@
+ignoredBuiltDependencies:
+  - '@google/genai'
+  - better-sqlite3
+  - electron
+  - electron-winstaller
+  - esbuild
+  - koffi
+  - ngrok
+  - protobufjs
