@@ -72,7 +72,7 @@
     "@mariozechner/pi-coding-agent": "^0.60.0",
     "@modelcontextprotocol/sdk": "^1.26.0",
     "@sinclair/typebox": "^0.34.0",
-    "@slack/bolt": "4.7.0",
+    "@slack/bolt": "4.7.3",
     "@slack/web-api": "7.15.1",
     "archiver": "^7.0.1",
     "better-sqlite3": "^12.8.0",
